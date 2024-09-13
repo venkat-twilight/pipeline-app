@@ -36,7 +36,7 @@ pipeline {
 
         stage('Deploy to Digital Ocean') {
             steps {
-                sshagent (credentials: ['id_rsa']) {
+                sshagent (credentials: ['digital-ocean-ssh-key-id']) {
                     sh """
                     ssh -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_IP} 'docker pull ${DOCKER_IMAGE}:${DOCKER_TAG} && docker stop pipeline-app-container || true && docker rm pipeline-app-container || true && docker run -d --name pipeline-app-container -p 80:3000 ${DOCKER_IMAGE}:${DOCKER_TAG}'
                     """
