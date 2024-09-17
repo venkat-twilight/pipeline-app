@@ -13,7 +13,7 @@ export default function Home() {
           height={38}
           priority
         />
-        <h3>XTraveller App v1.1</h3>
+        <h3>XTraveller App v1.2</h3>
         <ol>
           <li>
             Get started by editing <code>src/app/page.tsx</code>.
